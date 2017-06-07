@@ -1,0 +1,37 @@
+//
+//  PrefixHeader.pch
+//  LiveStream
+//
+//  Created by 赵博 on 17/4/19.
+//  Copyright © 2017年 赵博. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#import "AKNewWorking.h"
+#import "UIImage+ALinExtension.h"
+#import <UIImageView+WebCache.h>
+#import <MBProgressHUD.h>
+#ifdef __OBJC__
+
+//调试阶段
+#ifdef DEBUG
+//输出日志
+#define CustomLog(...) NSLog(__VA_ARGS__)
+#define CustomFunc  CustomLog(@"%s",__func__)
+#else
+#define CustomLog(...)
+#endif
+//颜色
+#define CustomColor( r, g, b, a)  [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+//宽
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+//高
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+//背景颜色
+#define CommonBgColor CustomColor( 206, 206, 206, 1)
+//版本判断
+#define IOS(version) ([UIDevice currentDevice].systemVersion.doubleValue >= (version))
+
+#endif
+#endif /* PrefixHeader_pch */
